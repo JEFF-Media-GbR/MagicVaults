@@ -1,6 +1,6 @@
-package de.jeff_media.pluginname.config;
+package de.jeff_media.magicvaults.config;
 
-import de.jeff_media.pluginname.PluginName;
+import de.jeff_media.magicvaults.MagicVaults;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -9,7 +9,7 @@ import java.util.Locale;
 
 public class Config {
 
-    private final PluginName main = PluginName.getInstance();
+    private final MagicVaults main = MagicVaults.getInstance();
     private final FileConfiguration conf = main.getConfig();
     private final Metrics metrics = new Metrics(main,main.getBstatsId());
 

@@ -1,6 +1,6 @@
-package de.jeff_media.pluginname.config;
+package de.jeff_media.magicvaults.config;
 
-import de.jeff_media.pluginname.PluginName;
+import de.jeff_media.magicvaults.MagicVaults;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
@@ -12,10 +12,10 @@ public class Messages {
     public static String TEST2;
     public static String CONFIG_RELOADED;
 
-    private final PluginName main;
+    private final MagicVaults main;
 
     public Messages() {
-        this.main = PluginName.getInstance();
+        this.main = MagicVaults.getInstance();
 
         TEST1 = load("test1","&aThis is a test message.");
         TEST2 = load("test2", "&bThis is another text message.");

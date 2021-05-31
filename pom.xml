@@ -4,12 +4,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <name>PluginName</name>
+    <name>MagicVaults</name>
     <version>1.0.0</version>
     <description>This plugin does awesome things.</description>
+    <artifactId>MagicVaults</artifactId>
 
     <groupId>de.jeff_media</groupId>
-    <artifactId>${project.name}</artifactId>
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
@@ -85,7 +85,7 @@
                 <version>3.2.0</version>
                 <executions>
                     <execution>
-                        <id>regex-property</id>
+                        <id>lowercase-package</id>
                         <goals>
                             <goal>regex-property</goal>
                         </goals>
@@ -99,7 +99,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>regex-property</id>
+                        <id>lowercase-mainCommand</id>
                         <goals>
                             <goal>regex-property</goal>
                         </goals>

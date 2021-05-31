@@ -1,24 +1,24 @@
-package de.jeff_media.pluginname;
+package de.jeff_media.magicvaults;
 
-import de.jeff_media.pluginname.commands.MainCommand;
-import de.jeff_media.pluginname.config.Config;
-import de.jeff_media.pluginname.config.ConfigUpdater;
-import de.jeff_media.pluginname.config.Messages;
+import de.jeff_media.magicvaults.commands.MainCommand;
+import de.jeff_media.magicvaults.config.Config;
+import de.jeff_media.magicvaults.config.ConfigUpdater;
+import de.jeff_media.magicvaults.config.Messages;
 import de.jeff_media.updatechecker.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Locale;
 
-public class PluginName extends JavaPlugin {
+public class MagicVaults extends JavaPlugin {
 
     private static final int SPIGOT_RESOURCE_ID = 1;
     private static final int BSTATS_ID = 1;
-    private static final String UPDATECHECKER_LINK_API = "https://api.jeff-media.de/pluginname/latest-version.txt";
+    private static final String UPDATECHECKER_LINK_API = "https://api.jeff-media.de/magicvaults/latest-version.txt";
     private static final String UPDATECHECKER_LINK_DONATE = "https://paypal.me/mfnalex";
 
-    private static PluginName instance;
+    private static MagicVaults instance;
 
-    public static PluginName getInstance() {
+    public static MagicVaults getInstance() {
         return instance;
     }
 

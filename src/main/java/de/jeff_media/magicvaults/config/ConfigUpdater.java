@@ -1,6 +1,6 @@
-package de.jeff_media.pluginname.config;
+package de.jeff_media.magicvaults.config;
 
-import de.jeff_media.pluginname.PluginName;
+import de.jeff_media.magicvaults.MagicVaults;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 public class ConfigUpdater {
 
-    private static PluginName main = PluginName.getInstance();
+    private static MagicVaults main = MagicVaults.getInstance();
 
     private static final String[] NODES_NEEDING_DOUBLE_QUOTES = {"message-"};
     private static final String[] NODES_NEEDING_SINGLE_QUOTES = {"test-"};
@@ -132,7 +132,7 @@ public class ConfigUpdater {
         return main.getDataFolder() + File.separator + fileName;
     }
 
-    private static long getNewConfigVersion(PluginName main) {
+    private static long getNewConfigVersion(MagicVaults main) {
         InputStream in = main.getClass().getResourceAsStream("/config-version.txt");
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
         try {
