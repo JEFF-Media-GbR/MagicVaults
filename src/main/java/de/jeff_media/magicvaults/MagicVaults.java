@@ -4,6 +4,7 @@ import de.jeff_media.magicvaults.commands.MainCommand;
 import de.jeff_media.magicvaults.config.Config;
 import de.jeff_media.magicvaults.config.ConfigUpdater;
 import de.jeff_media.magicvaults.config.Messages;
+import de.jeff_media.magicvaults.sql.SQLiteManager;
 import de.jeff_media.updatechecker.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,6 +32,8 @@ public class MagicVaults extends JavaPlugin {
         instance = this;
         reload();
         getCommand(getName().toLowerCase(Locale.ROOT)).setExecutor(new MainCommand());
+        SQLiteManager.createDatabase();
+        SQLiteManager.createTable();
     }
 
     public void reload() {
