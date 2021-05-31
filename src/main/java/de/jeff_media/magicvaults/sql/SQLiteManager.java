@@ -38,19 +38,17 @@ public class SQLiteManager {
         }
     }
 
-    public static void createTable() {
-        final String sql = "CREATE TABLE IF NOT EXISTS magicvaults (\n"
-                + "	uuid varchar(36) PRIMARY KEY,\n"
-                + "	name text NOT NULL,\n"
-                + "	data blob\n"
+    public static void createContentsTable() {
+        final String sql = "CREATE TABLE IF NOT EXISTS vaultcontents ("
+                + "	id varchar(36) PRIMARY KEY,"
+                + "	data blob"
                 + ");";
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
-            // create a new table
             stmt.execute(sql);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }

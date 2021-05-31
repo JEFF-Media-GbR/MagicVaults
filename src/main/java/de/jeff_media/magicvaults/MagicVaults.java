@@ -33,7 +33,7 @@ public class MagicVaults extends JavaPlugin {
         reload();
         getCommand(getName().toLowerCase(Locale.ROOT)).setExecutor(new MainCommand());
         SQLiteManager.createDatabase();
-        SQLiteManager.createTable();
+        SQLiteManager.createContentsTable();
     }
 
     public void reload() {
