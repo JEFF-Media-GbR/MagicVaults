@@ -9,20 +9,22 @@ import java.util.Locale;
 
 public class Config {
 
-    private final MagicVaults main = MagicVaults.getInstance();
-    private final FileConfiguration conf = main.getConfig();
-    private final Metrics metrics = new Metrics(main,main.getBstatsId());
-
+    public static final String STORAGE_TYPE = "storage";
     public static final String CHECK_FOR_UPDATES = "check-for-updates";
     public static final String CHECK_FOR_UPDATES_INTERVAL = "update-check-interval";
     public static final String CONFIG_VERSION = "config-version";
     public static final String CONFIG_PLUGIN_VERSION = "plugin-version";
     public static final String DEBUG = "debug";
 
+    private final MagicVaults main = MagicVaults.getInstance();
+    private final FileConfiguration conf = main.getConfig();
+    private final Metrics metrics = new Metrics(main,main.getBstatsId());
+
     public Config() {
         addDefault(CHECK_FOR_UPDATES, "true");
         addDefault(CHECK_FOR_UPDATES_INTERVAL, 4);
         addDefault(DEBUG, false);
+        addDefault(STORAGE_TYPE, "sqlite");
 
         addAllMetrics();
     }

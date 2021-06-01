@@ -2,18 +2,12 @@
 ##### Test for ConfigUpdater  #####
 ###################################
 
-# Following is a normal string list
-disabled-worlds:
-
-# This needs double quotes:
-message-test: "Double Quotes"
-
-# This needs single quotes:
-test-bla: 'Single quotes'
-
-# Normal stuff
-test123: 3
-testasd: d
+# Available storage types:
+# - flatfile (uses one YAML file for all vaults)
+# - multiple-files (uses one YAML file per user)
+# - sqlite (default, uses a SQLite db)
+# - mysql (uses MySQL, see below)
+storage: sqlite
 
 ##########################
 #####   magicvaults   #####

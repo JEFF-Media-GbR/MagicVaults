@@ -4,8 +4,10 @@ import de.jeff_media.magicvaults.commands.MainCommand;
 import de.jeff_media.magicvaults.config.Config;
 import de.jeff_media.magicvaults.config.ConfigUpdater;
 import de.jeff_media.magicvaults.config.Messages;
+import de.jeff_media.magicvaults.sql.SQLManager;
 import de.jeff_media.magicvaults.sql.SQLiteManager;
 import de.jeff_media.updatechecker.UpdateChecker;
+import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Locale;
@@ -16,6 +18,7 @@ public class MagicVaults extends JavaPlugin {
     private static final int BSTATS_ID = 1;
     private static final String UPDATECHECKER_LINK_API = "https://api.jeff-media.de/magicvaults/latest-version.txt";
     private static final String UPDATECHECKER_LINK_DONATE = "https://paypal.me/mfnalex";
+    @Getter private static SQLManager sqlManager;
 
     private static MagicVaults instance;
 
@@ -32,8 +35,8 @@ public class MagicVaults extends JavaPlugin {
         instance = this;
         reload();
         getCommand(getName().toLowerCase(Locale.ROOT)).setExecutor(new MainCommand());
-        SQLiteManager.createDatabase();
-        SQLiteManager.createContentsTable();
+        sqlManager = SQLManager.init();
+        sqlManager.createTables();
     }
 
     public void reload() {
